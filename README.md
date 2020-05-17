@@ -125,7 +125,7 @@ Parameter | Description | Default
 `ssl.enabled` | enable SSL certificate generation | `false`
 `ssl.email` | email address used for SSL certificate issuing | `"support@example.com"`
 `images` | Docker image tags per component
-`vendor.frontend` | optional Git URL for a development frontend repo | `git@github.com:nexbitio/baseapp.git`
+`vendor.frontend` | optional Git URL for a development frontend repo | `git@bitbucket.com:nexbitio/npro.git`
 `vault.token` | Vault authentication token | `changeme `
 `database.host` | database host name | `db`
 `database.port` | database port | `3306 `
