@@ -1,0 +1,104 @@
+---
+app:
+  name: nDAX
+  domain: app.local
+  subdomain: www
+render_protect: false
+csrfEnabled: false
+ssl:
+  enabled: false
+  email: support@example.com
+images:
+  peatio: nexbitio/peatio:2.4.7
+  barong: nexbitio/barong:2.4.1
+  frontend: ndexnetwork/npro3 # Check on quay.io/nexbitio/baseapp for latest tags
+  tower: nexbitio/tower3
+finex:
+  enabled: false
+  image: /nexbitio/finex:2.4.0-5334683
+vendor:
+  frontend: git@github.com:nexbitio/npro3.git
+vault:
+  token: changeme
+database:
+  host: db
+  port: 3306
+  user: root
+  password: changeme
+storage:
+  provider: Google
+  bucketName: ndax-barong-docs-bucket
+  region: fra1
+  endpoint: https://fra1.digitaloceanspaces.com
+  accessKey: changeme
+  secretKey: changeme
+  signatureVersion: '2'
+twilio:
+  enabled: false
+  phone_number: "+15005550000"
+  account_sid: changeme
+  auth_token: changeme
+gaTrackerKey: ''
+captcha:
+  type: none
+  siteKey: changeme
+  secretKey: changeme
+smtp:
+  host: smtp.sendgrid.net
+  port: 2525
+  user: apikey
+  password: changeme
+  sender_email: noreply@barong.io
+  sender_name: Postmaster
+wallets:
+  eth:
+  - kind: deposit
+    address: changeme
+    max_balance: 0.0
+    secret: changeme
+  - kind: hot
+    address: changeme
+    max_balance: 100.0
+    secret: changeme
+  - kind: warm
+    address: changeme
+    max_balance: 1000.0
+    secret: changeme
+  btc:
+  - kind: deposit
+    address: changeme
+    max_balance: 0.0
+  - kind: hot
+    address: changeme
+    max_balance: 100.0
+  - kind: warm
+    address: changeme
+    max_balance: 1000.0
+parity:
+  network: testnet
+  address: parity
+  rpcport: 8545
+  port: 30303
+bitcoind:
+  enabled: false
+  rpcuser: admin
+  rpcpassword: changeme
+  address: bitcoind
+  network: testnet
+  rpcport: 18332
+  port: 18333
+litecoind:
+  rpcuser: admin
+  rpcpassword: changeme
+  address: litecoind
+  network: testnet
+  rpcport: 19332
+  port: 19335
+terraform:
+  credentials: "~/safe/ndax.json"
+  project: example-ndax
+  region: europe-west4
+  zone: europe-west4-a
+  instance_name: ndax-cloud
+  machine_type: n1-standard-4
+  image: debian-cloud/debian-9
